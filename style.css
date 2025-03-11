@@ -233,6 +233,13 @@ textarea {
     border: 1px solid var(--green600-medium);
     cursor: pointer;
   }
+
+	#supportRequest:checked + label + div {
+    background-color: var(--green200-lighter);
+    border: 1px solid var(--green600-medium);
+    cursor: pointer;
+	}
+
   #generalEnquiryContainer label,
   #supportRequestContainer label {
     cursor: pointer;

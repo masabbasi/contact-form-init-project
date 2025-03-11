@@ -43,8 +43,4 @@ const submitHandler = (e) => {
   }
 };
 
-inputs.forEach(input => {
-  input.addEventListener('paste', e => {
-    e.preventDefault();
-  });
-});
+submitButton.addEventListener("click",submitHandler);
