@@ -31,14 +31,14 @@ const showSuccessMessage = () => {
   setTimeout(() => {
     successMessage.style.display = "none";
   }, 2000);
-  clearForm(allInput);
+  clearForm(allInput,generalEnquiryContainer,supportRequestContainer);
 };
 
 const submitHandler = (e) => {
   e.preventDefault();
   const status = formValidation(allInput);
   if (status) {
-    e.preventDefault();
+    // e.preventDefault();
     showSuccessMessage();
   } else {
     e.preventDefault();

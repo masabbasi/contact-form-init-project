@@ -1,12 +1,16 @@
-function clearForm({
-  firstName,
-  lastName,
-  email,
-  generalEnquiry,
-  supportRequest,
-  messageBox,
-  checkbox,
-}) {
+function clearForm(
+  {
+    firstName,
+    lastName,
+    email,
+    generalEnquiry,
+    supportRequest,
+    messageBox,
+    checkbox,
+  },
+  generalEnquiryContainer,
+  supportRequestContainer
+) {
   firstName.value = "";
   lastName.value = "";
   email.value = "";
@@ -14,6 +18,8 @@ function clearForm({
   supportRequest.checked = false;
   messageBox.value = "";
   checkbox.checked = false;
+  generalEnquiryContainer.classList.remove("queryTypeActive");
+  supportRequestContainer.classList.remove("queryTypeActive");
 }
 
 export default clearForm;

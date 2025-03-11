@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-	margin: 0 auto;
+  margin: 0 auto;
 }
 
 #successMessage {
@@ -38,7 +38,10 @@ body {
   text-align: justify;
   color: var(--white);
   position: absolute;
-  display: none;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	display: none;
 }
 
 #successMessage img {
@@ -104,22 +107,30 @@ textarea {
 }
 
 #supportRequestContainer {
-	margin-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+
+.queryTypeActive {
+	background-color: var(--green200-lighter);
+	border: 1px solid var(--green600-medium);
+	cursor: pointer;
 }
 
 #checkBoxContainer {
   display: flex;
-	flex-direction: column;
+  flex-direction: column;
   justify-content: center;
 }
 
 #checkBoxContainer label {
-	font-weight: 300;
+  font-weight: 300;
   font-size: 14px;
+  display: flex;
 }
 
 #checkboxContent {
-	display: flex;
+  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -160,21 +171,65 @@ textarea {
 .error {
   display: block;
   color: var(--red);
-	height: 15px;
+  height: 15px;
 }
 .redBorder {
   border: 1px solid var(--red);
   border-radius: 100%;
 }
 
+#generalEnquiry,#supportRequest {
+  display: none;
+}
+
+#generalEnquiryContainer label,#supportRequestContainer label {
+  display: flex;
+  align-items: center;
+}
+
+#generalEnquiryIcon,#supportRequestIcon {
+  width: 13px;
+  height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey-500-medium);
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+#generalEnquiry:checked + label #generalEnquiryIcon,#supportRequest:checked + label #supportRequestIcon {
+  background: url(./assets/images/icon-radio-selected.svg) no-repeat center;
+	border: 1px solid transparent;
+}
+
+#checkbox {
+  display: none;
+}
+
+#checkboxIcon {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--grey-500-medium);
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
+#checkbox:checked + label #checkboxIcon {
+  background: url(./assets/images/icon-checkbox-check.svg) no-repeat center;
+	border: 1px solid transparent;
+}
+
 @media (min-width: 768px) {
   #successMessage {
     width: 520px;
-    top: 50px;
   }
 
   body {
-    padding-top: 100px;
     position: relative;
   }
   .container {
@@ -219,12 +274,6 @@ textarea {
   input:focus,
   textarea:focus {
     border: 1px solid var(--grey-900-darker);
-    cursor: pointer;
-  }
-
-  .queryTypeActive {
-    background-color: var(--green200-lighter);
-    border: 1px solid var(--green600-medium);
     cursor: pointer;
   }
 
