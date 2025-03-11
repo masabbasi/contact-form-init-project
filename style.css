@@ -135,7 +135,7 @@ textarea {
   gap: 10px;
 }
 
-#star {
+.star {
   color: var(--green600-medium);
   font-size: 20px;
   font-weight: 700;
