@@ -222,23 +222,16 @@ textarea {
     cursor: pointer;
   }
 
-  #generalEnquiryContainer:hover,
-  #supportRequestContainer:hover {
-    border: 1px solid var(--green600-medium);
-    cursor: pointer;
-  }
-  .generalEnquiryActive,
-  .supportRequestActive {
+  .queryTypeActive {
     background-color: var(--green200-lighter);
     border: 1px solid var(--green600-medium);
     cursor: pointer;
   }
 
-	#supportRequest:checked + label + div {
-    background-color: var(--green200-lighter);
-    border: 1px solid var(--green600-medium);
+  #generalEnquiryContainer,
+  #supportRequestContainer {
     cursor: pointer;
-	}
+  }
 
   #generalEnquiryContainer label,
   #supportRequestContainer label {

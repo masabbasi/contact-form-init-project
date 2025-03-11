@@ -12,6 +12,8 @@ const messageBox = $.getElementById("messageBox");
 const checkbox = $.getElementById("checkbox");
 const submitButton = $.getElementById("submitButton");
 const successMessage = $.getElementById("successMessage");
+const generalEnquiryContainer = $.getElementById("generalEnquiryContainer");
+const supportRequestContainer = $.getElementById("supportRequestContainer");
 const inputs = document.querySelectorAll('input[type="text"],input[type="email"], textarea');
 
 const allInput = {
@@ -44,3 +46,20 @@ const submitHandler = (e) => {
 };
 
 submitButton.addEventListener("click",submitHandler);
+generalEnquiryContainer.addEventListener("click",()=>{
+	if (!generalEnquiry.checked) {
+		generalEnquiry.checked = true;
+		generalEnquiryContainer.classList.add("queryTypeActive");
+		supportRequest.checked = false;
+		supportRequestContainer.classList.remove("queryTypeActive");
+	}
+})
+
+supportRequestContainer.addEventListener("click",()=>{
+	if (!supportRequest.checked) {
+		supportRequest.checked = true;
+		supportRequestContainer.classList.add("queryTypeActive");
+		generalEnquiry.checked = false;
+		generalEnquiryContainer.classList.remove("queryTypeActive");
+	}
+})
